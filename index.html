@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Babe ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+
+background:linear-gradient(-45deg,#ff0080,#ff4da6,#ff80bf,#ff66cc);
+background-size:400% 400%;
+animation:bg 12s infinite ease;
+overflow-x:hidden;
+color:white;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.container{
+
+max-width:1100px;
+margin:auto;
+padding:40px;
+text-align:center;
+
+}
+
+h1{
+
+font-size:55px;
+margin-bottom:20px;
+animation:fade 2s;
+
+}
+
+@keyframes fade{
+
+from{opacity:0;transform:translateY(-40px);}
+to{opacity:1;transform:translateY(0);}
+
+}
+
+.card{
+
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:25px;
+margin:30px auto;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+button{
+
+padding:15px 35px;
+border:none;
+border-radius:40px;
+font-size:18px;
+margin:15px;
+cursor:pointer;
+transition:.4s;
+
+}
+
+.yes{
+
+background:#fff;
+color:#ff1493;
+
+}
+
+.no{
+
+background:#ff3366;
+color:white;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+#result{
+
+font-size:40px;
+margin-top:20px;
+
+}
+
+.gallery{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:30px;
+
+}
+
+.frame{
+
+background:white;
+padding:10px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+transition:.4s;
+
+}
+
+.frame:hover{
+
+transform:scale(1.06) rotate(2deg);
+
+}
+
+.frame img{
+
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:15px;
+
+}
+
+.note{
+
+font-size:24px;
+line-height:1.8;
+
+}
+
+.countdown{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+
+}
+
+.time{
+
+background:white;
+color:#ff1493;
+padding:25px;
+border-radius:20px;
+width:140px;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+.time h2{
+
+font-size:42px;
+
+}
+
+footer{
+
+padding:50px;
+font-size:28px;
+
+}
+
+.heart{
+
+position:fixed;
+font-size:24px;
+animation:float 8s linear infinite;
+opacity:.7;
+
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(100vh);
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-120vh);
+opacity:0;
+
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>❤️ Hey Beautiful ❤️</h1>
+
+<div class="card">
+
+<h2>Let's answer a few questions 😊</h2>
+
+<br>
+
+<h2>Do you love your man? 🥹</h2>
+
+<button class="yes" onclick="love()">YES ❤️</button>
+
+<button class="no" onclick="noLove()">NO 😒</button>
+
+<div id="result"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Our Beautiful Memories</h2>
+
+<div class="gallery">
+
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707733/4bf4772f-26bc-41d5-8e66-0c5f911e323c_ilzvtf.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707724/577198b0-ca6d-4461-96c9-b1ca14d07e52_cbnmi1.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707721/161070df-b3e8-4b91-9d09-16d74554dea3_fxuxuy.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707717/adbc0a9c-d63e-433e-87f6-a16225891c44_ct010f.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707714/6b0d9f54-0d25-4dd7-a41c-435cb99ccc22_sn6ac2.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707702/4b63f7b5-b0ce-4f30-af6b-89d21a36ea7e_r9fdmq.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707698/2222c2e4-57c9-4e5d-a246-e4c9d7a3268e_zjcbc3.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707694/5d5c919a-4f34-4879-91ee-18e150643a2f_m2bhyo.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707690/5d36113f-cf69-4483-876f-ce32efa83300_tfez7b.jpg"></div>
+<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707687/ef5b2c30-18fe-478d-aaf2-ee9947b401a4_phbtyw.jpg"></div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>💌 A Little Note For You</h2>
+
+<br>
+
+<p class="note">
+
+Babe ❤️,
+
+I know your birthday is just around the corner.
+
+Be patient...
+
+Your man is gonna do something special with his little coins. 🥹💕
+
+It may not be the biggest surprise in the world, but it will come straight from my heart.
+
+Thank you for choosing me every single day.
+
+I love you endlessly. ❤️
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>⏳ Countdown To Your Birthday </h2>
+
+<div class="countdown">
+
+<div class="time">
+<h2 id="days">0</h2>
+<p>Days</p>
+</div>
+
+<div class="time">
+<h2 id="hours">0</h2>
+<p>Hours</p>
+</div>
+
+<div class="time">
+<h2 id="minutes">0</h2>
+<p>Minutes</p>
+</div>
+
+<div class="time">
+<h2 id="seconds">0</h2>
+<p>Seconds</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+Happy Birthday In Advance My Love ❤️🥰
+
+</footer>
+
+<footer>
+    © 2026 QUEEN'S BOYFRIEND • Designed with love by CLEMOH
+</footer>
+
+
+</div>
+
+<script>
+
+function love(){
+
+document.getElementById("result").innerHTML=
+"🥰❤️😍💖💕💘💞😘💝💓<br><br>I LOVE YOU TOOOO ❤️";
+
+for(let i=0;i<80;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*5+4)+"s";
+
+heart.style.fontSize=(Math.random()*30+20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+}
+
+}
+
+function noLove(){
+
+alert("😂😂 Nice try... I know you do ❤️");
+
+}
+
+const birthday=new Date("July 15, 2026 00:00:00").getTime();
+
+setInterval(function(){
+
+const now=new Date().getTime();
+
+const distance=birthday-now;
+
+const days=Math.floor(distance/(1000*60*60*24));
+
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+},1000);
+
+for(let i=0;i<40;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💕";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*8+6)+"s";
+
+heart.style.animationDelay=Math.random()*6+"s";
+
+heart.style.fontSize=(Math.random()*25+15)+"px";
+
+document.body.appendChild(heart);
+
+}
+
+</script>
+
+</body>
+</html>
