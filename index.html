@@ -127,10 +127,13 @@
         }
 
         .actions {
+            position: relative;
             display: flex;
+            align-items: flex-start;
             flex-wrap: wrap;
             justify-content: center;
             gap: 14px;
+            min-height: 184px;
             margin-top: 24px;
         }
 
@@ -146,6 +149,12 @@
             cursor: pointer;
             font-weight: 750;
             transition: transform .18s ease, box-shadow .18s ease, color .18s ease;
+        }
+
+        .clay-button--evasive {
+            position: absolute;
+            z-index: 5;
+            margin: 0;
         }
 
         .clay-button:hover {
@@ -435,6 +444,7 @@ I love you endlessly. ❤️</p>
         const result = document.getElementById('result');
         const heartLayer = document.getElementById('heartLayer');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const noButton = document.getElementById('noButton');
 
         function celebrate(count) {
             if (reducedMotion.matches) return;
@@ -457,9 +467,49 @@ I love you endlessly. ❤️</p>
             celebrate(36);
         });
 
-        document.getElementById('noButton').addEventListener('click', () => {
-            result.textContent = '😂 Nice try... I know you do ❤️';
-            celebrate(5);
+        function evadeNoButton(event) {
+            if (event && event.cancelable) event.preventDefault();
+
+            const rect = noButton.getBoundingClientRect();
+            const actions = noButton.parentElement;
+            const actionsRect = actions.getBoundingClientRect();
+            const yesRect = document.getElementById('yesButton').getBoundingClientRect();
+            const margin = 12;
+            const maxLeft = Math.max(margin, actionsRect.width - rect.width - margin);
+            const maxTop = Math.max(margin, actionsRect.height - rect.height - margin);
+            let left = margin;
+            let top = margin;
+
+            for (let attempt = 0; attempt < 20; attempt += 1) {
+                left = margin + Math.random() * Math.max(0, maxLeft - margin);
+                top = margin + Math.random() * Math.max(0, maxTop - margin);
+                const candidateLeft = actionsRect.left + left;
+                const candidateTop = actionsRect.top + top;
+                const avoidsPointer = !event ||
+                    event.clientX < candidateLeft - 28 ||
+                    event.clientX > candidateLeft + rect.width + 28 ||
+                    event.clientY < candidateTop - 28 ||
+                    event.clientY > candidateTop + rect.height + 28;
+                const avoidsYes = candidateLeft + rect.width < yesRect.left - 8 ||
+                    candidateLeft > yesRect.right + 8 ||
+                    candidateTop + rect.height < yesRect.top - 8 ||
+                    candidateTop > yesRect.bottom + 8;
+                if (avoidsPointer && avoidsYes) {
+                    break;
+                }
+            }
+
+            noButton.classList.add('clay-button--evasive');
+            noButton.style.left = `${left}px`;
+            noButton.style.top = `${top}px`;
+            result.textContent = '😜 You almost got me!';
+        }
+
+        noButton.addEventListener('pointerenter', evadeNoButton);
+        noButton.addEventListener('pointerdown', evadeNoButton);
+        noButton.addEventListener('click', evadeNoButton);
+        window.addEventListener('resize', () => {
+            if (noButton.classList.contains('clay-button--evasive')) evadeNoButton();
         });
 
         function nextBirthday(now) {
