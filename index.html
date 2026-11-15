@@ -1,267 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Babe ❤️</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
-}
-
-body{
-
-background:linear-gradient(-45deg,#ff0080,#ff4da6,#ff80bf,#ff66cc);
-background-size:400% 400%;
-animation:bg 12s infinite ease;
-overflow-x:hidden;
-color:white;
-
-}
-
-@keyframes bg{
-
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-
-}
-
-.container{
-
-max-width:1100px;
-margin:auto;
-padding:40px;
-text-align:center;
-
-}
-
-h1{
-
-font-size:55px;
-margin-bottom:20px;
-animation:fade 2s;
-
-}
-
-@keyframes fade{
-
-from{opacity:0;transform:translateY(-40px);}
-to{opacity:1;transform:translateY(0);}
-
-}
-
-.card{
-
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(12px);
-padding:30px;
-border-radius:25px;
-margin:30px auto;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-
-}
-
-button{
-
-padding:15px 35px;
-border:none;
-border-radius:40px;
-font-size:18px;
-margin:15px;
-cursor:pointer;
-transition:.4s;
-
-}
-
-.yes{
-
-background:#fff;
-color:#ff1493;
-
-}
-
-.no{
-
-background:#ff3366;
-color:white;
-
-}
-
-button:hover{
-
-transform:scale(1.1);
-
-}
-
-#result{
-
-font-size:40px;
-margin-top:20px;
-
-}
-
-.gallery{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-margin-top:30px;
-
-}
-
-.frame{
-
-background:white;
-padding:10px;
-border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,.3);
-transition:.4s;
-
-}
-
-.frame:hover{
-
-transform:scale(1.06) rotate(2deg);
-
-}
-
-.frame img{
-
-width:100%;
-height:240px;
-object-fit:cover;
-border-radius:15px;
-
-}
-
-.note{
-
-font-size:24px;
-line-height:1.8;
-
-}
-
-.countdown{
-
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-top:30px;
-
-}
-
-.time{
-
-background:white;
-color:#ff1493;
-padding:25px;
-border-radius:20px;
-width:140px;
-box-shadow:0 8px 20px rgba(0,0,0,.25);
-
-}
-
-.time h2{
-
-font-size:42px;
-
-}
-
-footer{
-
-padding:50px;
-font-size:28px;
-
-}
-
-.heart{
-
-position:fixed;
-font-size:24px;
-animation:float 8s linear infinite;
-opacity:.7;
-
-}
-
-@keyframes float{
-
-from{
-
-transform:translateY(100vh);
-opacity:1;
-
-}
-
-to{
-
-transform:translateY(-120vh);
-opacity:0;
-
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6dce8">
+    <meta name="description" content="A little birthday page, made with love.">
+    <title>For My Babe ❤️</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --page: #f7e4ec;
+            --surface: #f9e9f0;
+            --surface-bright: #fff6fa;
+            --ink: #59374a;
+            --muted: #876b7b;
+            --pink: #cf4384;
+            --pink-dark: #a92d68;
+            --rose: #ed8eb7;
+            --shadow: #d9beca;
+            --light-shadow: #fff8fc;
+            --radius: 30px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-width: 320px;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            color: var(--ink);
+            background:
+                radial-gradient(ellipse at 12% 8%, rgba(255, 255, 255, .9), transparent 34rem),
+                radial-gradient(ellipse at 88% 40%, rgba(255, 183, 213, .38), transparent 32rem),
+                var(--page);
+            font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .page-shell {
+            position: relative;
+            z-index: 1;
+            width: min(100% - 32px, 1040px);
+            margin: 0 auto;
+            padding: clamp(32px, 7vw, 76px) 0 24px;
+        }
+
+        .hero {
+            margin: 0 auto clamp(28px, 5vw, 52px);
+            text-align: center;
+            animation: arrive .8s ease-out both;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 999px;
+            color: var(--pink-dark);
+            background: var(--surface);
+            box-shadow: 5px 5px 12px var(--shadow), -5px -5px 12px var(--light-shadow);
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            font-size: clamp(2.6rem, 8vw, 5rem);
+            line-height: 1.08;
+            letter-spacing: -.055em;
+        }
+
+        .hero p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+        }
+
+        .clay-card {
+            margin: 26px 0;
+            padding: clamp(22px, 5vw, 42px);
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: var(--radius);
+            background: linear-gradient(145deg, var(--surface-bright), #f2dce6);
+            box-shadow:
+                16px 16px 34px var(--shadow),
+                -16px -16px 34px var(--light-shadow);
+            animation: arrive .7s ease-out both;
+        }
+
+        .clay-card h2 {
+            margin-bottom: 8px;
+            font-size: clamp(1.45rem, 4vw, 2rem);
+            line-height: 1.25;
+        }
+
+        .section-intro {
+            margin-bottom: 24px;
+            color: var(--muted);
+        }
+
+        .question {
+            margin: 24px 0 8px;
+            font-size: clamp(1.2rem, 3.4vw, 1.65rem);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .clay-button {
+            min-width: 142px;
+            min-height: 52px;
+            padding: 12px 24px;
+            border: 1px solid rgba(255, 255, 255, .9);
+            border-radius: 18px;
+            color: var(--pink-dark);
+            background: linear-gradient(145deg, #fff8fc, #f1dce6);
+            box-shadow: 7px 7px 14px var(--shadow), -7px -7px 14px var(--light-shadow);
+            cursor: pointer;
+            font-weight: 750;
+            transition: transform .18s ease, box-shadow .18s ease, color .18s ease;
+        }
+
+        .clay-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 9px 9px 16px var(--shadow), -9px -9px 16px var(--light-shadow);
+        }
+
+        .clay-button:active {
+            transform: translateY(1px);
+            box-shadow: inset 4px 4px 8px var(--shadow), inset -4px -4px 8px var(--light-shadow);
+        }
+
+        .clay-button:focus-visible {
+            outline: 3px solid var(--pink-dark);
+            outline-offset: 4px;
+        }
+
+        .clay-button--yes {
+            color: white;
+            background: linear-gradient(145deg, #e866a0, #c83f7e);
+            box-shadow: 7px 7px 14px #c79bad, -7px -7px 14px #fff3f9;
+        }
+
+        .clay-button--yes:hover {
+            color: white;
+            box-shadow: 9px 9px 16px #c79bad, -9px -9px 16px #fff3f9;
+        }
+
+        .result {
+            min-height: 1.7em;
+            margin: 22px 0 0;
+            color: var(--pink-dark);
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-weight: 750;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+            gap: clamp(14px, 2.5vw, 24px);
+            margin-top: 28px;
+        }
+
+        .photo-clay {
+            overflow: hidden;
+            aspect-ratio: 4 / 5;
+            padding: 9px;
+            border: 1px solid rgba(255, 255, 255, .86);
+            border-radius: 24px;
+            background: linear-gradient(145deg, #fff8fc, #f0d9e4);
+            box-shadow: 8px 8px 16px var(--shadow), -8px -8px 16px var(--light-shadow);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .photo-clay:hover {
+            z-index: 1;
+            transform: translateY(-5px) rotate(-1deg);
+            box-shadow: 12px 12px 20px var(--shadow), -10px -10px 20px var(--light-shadow);
+        }
+
+        .photo-clay img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 17px;
+            object-fit: cover;
+        }
+
+        .love-note {
+            max-width: 680px;
+            margin: 22px auto 0;
+            color: #68465a;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.08rem, 2.8vw, 1.35rem);
+            line-height: 1.9;
+            white-space: pre-line;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: clamp(10px, 2.5vw, 20px);
+            max-width: 720px;
+            margin: 28px auto 0;
+        }
+
+        .time-tile {
+            padding: clamp(12px, 3vw, 22px) 8px;
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 22px;
+            background: linear-gradient(145deg, #fff8fc, #f2dce7);
+            box-shadow: inset 5px 5px 10px #dfc5d0, inset -5px -5px 10px #fffaff;
+        }
+
+        .time-value {
+            display: block;
+            color: var(--pink-dark);
+            font-size: clamp(1.7rem, 6vw, 3rem);
+            font-variant-numeric: tabular-nums;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .time-label {
+            display: block;
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: .82rem;
+            font-weight: 650;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        .birthday-message {
+            min-height: 1.6em;
+            margin: 18px 0 0;
+            color: var(--pink-dark);
+            font-weight: 700;
+        }
+
+        footer {
+            padding: 28px 8px 8px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .footer-love {
+            color: var(--pink-dark);
+            font-size: clamp(1.15rem, 3vw, 1.55rem);
+            font-weight: 750;
+        }
+
+        .footer-credit {
+            margin: 10px 0 0;
+            font-size: .88rem;
+        }
+
+        .heart-layer {
+            position: fixed;
+            z-index: 0;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -48px;
+            left: var(--left);
+            opacity: 0;
+            animation: float-up var(--duration) var(--delay) ease-in forwards;
+            font-size: var(--size);
+        }
+
+        @keyframes arrive {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float-up {
+            12% { opacity: .48; }
+            100% { opacity: 0; transform: translateY(-110vh) rotate(24deg); }
+        }
+
+        @media (max-width: 560px) {
+            .page-shell {
+                width: min(100% - 22px, 1040px);
+                padding-top: 32px;
+            }
+
+            .clay-card {
+                margin: 18px 0;
+                border-radius: 24px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 13px;
+            }
+
+            .photo-clay {
+                padding: 6px;
+                border-radius: 18px;
+            }
+
+            .photo-clay img {
+                border-radius: 13px;
+            }
+
+            .time-label {
+                font-size: .68rem;
+            }
+
+            footer {
+                padding-top: 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .heart-layer {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="heart-layer" id="heartLayer" aria-hidden="true"></div>
+    <main class="page-shell">
+        <header class="hero">
+            <span class="eyebrow">A little page made with love</span>
+            <h1>❤️ Hey, Beautiful ❤️</h1>
+            <p>A few sweet things to celebrate you and us.</p>
+        </header>
 
-<div class="container">
+        <section class="clay-card" aria-labelledby="questionTitle">
+            <h2 id="questionTitle">Let's answer a few questions 😊</h2>
+            <p class="question">Do you love your man? 🥹</p>
+            <div class="actions">
+                <button class="clay-button clay-button--yes" id="yesButton" type="button">YES ❤️</button>
+                <button class="clay-button" id="noButton" type="button">NO 😒</button>
+            </div>
+            <p class="result" id="result" role="status" aria-live="polite"></p>
+        </section>
 
-<h1>❤️ Hey Beautiful ❤️</h1>
+        <section class="clay-card" aria-labelledby="memoriesTitle">
+            <h2 id="memoriesTitle">Our Beautiful Memories</h2>
+            <p class="section-intro">Some of my favorite moments with you.</p>
+            <div class="gallery">
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707733/4bf4772f-26bc-41d5-8e66-0c5f911e323c_ilzvtf.jpg" alt="A favorite memory together, photo 1" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707724/577198b0-ca6d-4461-96c9-b1ca14d07e52_cbnmi1.jpg" alt="A favorite memory together, photo 2" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707721/161070df-b3e8-4b91-9d09-16d74554dea3_fxuxuy.jpg" alt="A favorite memory together, photo 3" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707717/adbc0a9c-d63e-433e-87f6-a16225891c44_ct010f.jpg" alt="A favorite memory together, photo 4" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707714/6b0d9f54-0d25-4dd7-a41c-435cb99ccc22_sn6ac2.jpg" alt="A favorite memory together, photo 5" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707702/4b63f7b5-b0ce-4f30-af6b-89d21a36ea7e_r9fdmq.jpg" alt="A favorite memory together, photo 6" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707698/2222c2e4-57c9-4e5d-a246-e4c9d7a3268e_zjcbc3.jpg" alt="A favorite memory together, photo 7" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707694/5d5c919a-4f34-4879-91ee-18e150643a2f_m2bhyo.jpg" alt="A favorite memory together, photo 8" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707690/5d36113f-cf69-4483-876f-ce32efa83300_tfez7b.jpg" alt="A favorite memory together, photo 9" loading="lazy" decoding="async"></figure>
+                <figure class="photo-clay"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707687/ef5b2c30-18fe-478d-aaf2-ee9947b401a4_phbtyw.jpg" alt="A favorite memory together, photo 10" loading="lazy" decoding="async"></figure>
+            </div>
+        </section>
 
-<div class="card">
-
-<h2>Let's answer a few questions 😊</h2>
-
-<br>
-
-<h2>Do you love your man? 🥹</h2>
-
-<button class="yes" onclick="love()">YES ❤️</button>
-
-<button class="no" onclick="noLove()">NO 😒</button>
-
-<div id="result"></div>
-
-</div>
-
-<div class="card">
-
-<h2>Our Beautiful Memories</h2>
-
-<div class="gallery">
-
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707733/4bf4772f-26bc-41d5-8e66-0c5f911e323c_ilzvtf.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707724/577198b0-ca6d-4461-96c9-b1ca14d07e52_cbnmi1.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707721/161070df-b3e8-4b91-9d09-16d74554dea3_fxuxuy.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707717/adbc0a9c-d63e-433e-87f6-a16225891c44_ct010f.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707714/6b0d9f54-0d25-4dd7-a41c-435cb99ccc22_sn6ac2.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707702/4b63f7b5-b0ce-4f30-af6b-89d21a36ea7e_r9fdmq.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707698/2222c2e4-57c9-4e5d-a246-e4c9d7a3268e_zjcbc3.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707694/5d5c919a-4f34-4879-91ee-18e150643a2f_m2bhyo.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707690/5d36113f-cf69-4483-876f-ce32efa83300_tfez7b.jpg"></div>
-<div class="frame"><img src="https://res.cloudinary.com/dx7jmojke/image/upload/v1783707687/ef5b2c30-18fe-478d-aaf2-ee9947b401a4_phbtyw.jpg"></div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>💌 A Little Note For You</h2>
-
-<br>
-
-<p class="note">
-
-Babe ❤️,
+        <section class="clay-card" aria-labelledby="noteTitle">
+            <h2 id="noteTitle">💌 A Little Note For You</h2>
+            <p class="love-note">Babe ❤️,
 
 I know your birthday is just around the corner.
 
@@ -273,137 +410,86 @@ It may not be the biggest surprise in the world, but it will come straight from 
 
 Thank you for choosing me every single day.
 
-I love you endlessly. ❤️
+I love you endlessly. ❤️</p>
+        </section>
 
-</p>
+        <section class="clay-card" aria-labelledby="countdownTitle">
+            <h2 id="countdownTitle">⏳ Countdown to Your Birthday</h2>
+            <p class="section-intro">Counting down to July 15.</p>
+            <div class="countdown" aria-label="Time until the next birthday" aria-live="off">
+                <div class="time-tile"><span class="time-value" id="days">0</span><span class="time-label">Days</span></div>
+                <div class="time-tile"><span class="time-value" id="hours">00</span><span class="time-label">Hours</span></div>
+                <div class="time-tile"><span class="time-value" id="minutes">00</span><span class="time-label">Minutes</span></div>
+                <div class="time-tile"><span class="time-value" id="seconds">00</span><span class="time-label">Seconds</span></div>
+            </div>
+            <p class="birthday-message" id="birthdayMessage" role="status" aria-live="polite"></p>
+        </section>
 
-</div>
+        <footer>
+            <p class="footer-love">Happy Birthday In Advance, My Love ❤️🥰</p>
+            <p class="footer-credit">© <span id="year"></span> QUEEN'S BOYFRIEND · Designed with love by CLEMOH</p>
+        </footer>
+    </main>
 
-<div class="card">
+    <script>
+        const result = document.getElementById('result');
+        const heartLayer = document.getElementById('heartLayer');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-<h2>⏳ Countdown To Your Birthday </h2>
+        function celebrate(count) {
+            if (reducedMotion.matches) return;
+            const available = Math.max(0, 24 - heartLayer.childElementCount);
+            for (let index = 0; index < Math.min(count, available); index += 1) {
+                const heart = document.createElement('span');
+                heart.className = 'heart';
+                heart.textContent = Math.random() > 0.5 ? '💖' : '💕';
+                heart.style.setProperty('--left', `${Math.random() * 100}%`);
+                heart.style.setProperty('--size', `${18 + Math.random() * 20}px`);
+                heart.style.setProperty('--duration', `${4 + Math.random() * 3}s`);
+                heart.style.setProperty('--delay', `${Math.random() * 0.7}s`);
+                heart.addEventListener('animationend', () => heart.remove(), { once: true });
+                heartLayer.append(heart);
+            }
+        }
 
-<div class="countdown">
+        document.getElementById('yesButton').addEventListener('click', () => {
+            result.textContent = '🥰 I LOVE YOU TOOOO ❤️';
+            celebrate(36);
+        });
 
-<div class="time">
-<h2 id="days">0</h2>
-<p>Days</p>
-</div>
+        document.getElementById('noButton').addEventListener('click', () => {
+            result.textContent = '😂 Nice try... I know you do ❤️';
+            celebrate(5);
+        });
 
-<div class="time">
-<h2 id="hours">0</h2>
-<p>Hours</p>
-</div>
+        function nextBirthday(now) {
+            const birthdayThisYear = new Date(now.getFullYear(), 6, 15);
+            const isBirthday = now.getMonth() === 6 && now.getDate() === 15;
+            return isBirthday || now < birthdayThisYear
+                ? birthdayThisYear
+                : new Date(now.getFullYear() + 1, 6, 15);
+        }
 
-<div class="time">
-<h2 id="minutes">0</h2>
-<p>Minutes</p>
-</div>
+        function updateCountdown() {
+            const now = new Date();
+            const birthday = nextBirthday(now);
+            const difference = Math.max(0, birthday.getTime() - now.getTime());
+            const day = 24 * 60 * 60 * 1000;
+            const hour = 60 * 60 * 1000;
+            const minute = 60 * 1000;
 
-<div class="time">
-<h2 id="seconds">0</h2>
-<p>Seconds</p>
-</div>
+            document.getElementById('days').textContent = String(Math.floor(difference / day));
+            document.getElementById('hours').textContent = String(Math.floor((difference % day) / hour)).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(Math.floor((difference % hour) / minute)).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(Math.floor((difference % minute) / 1000)).padStart(2, '0');
+            document.getElementById('birthdayMessage').textContent =
+                now.getMonth() === 6 && now.getDate() === 15 ? "It's your birthday today! 💕" : '';
+        }
 
-</div>
-
-</div>
-
-<footer>
-Happy Birthday In Advance My Love ❤️🥰
-
-</footer>
-
-<footer>
-    © 2026 QUEEN'S BOYFRIEND • Designed with love by CLEMOH
-</footer>
-
-
-</div>
-
-<script>
-
-function love(){
-
-document.getElementById("result").innerHTML=
-"🥰❤️😍💖💕💘💞😘💝💓<br><br>I LOVE YOU TOOOO ❤️";
-
-for(let i=0;i<80;i++){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="💖";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.animationDuration=(Math.random()*5+4)+"s";
-
-heart.style.fontSize=(Math.random()*30+20)+"px";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},8000);
-
-}
-
-}
-
-function noLove(){
-
-alert("😂😂 Nice try... I know you do ❤️");
-
-}
-
-const birthday=new Date("July 15, 2026 00:00:00").getTime();
-
-setInterval(function(){
-
-const now=new Date().getTime();
-
-const distance=birthday-now;
-
-const days=Math.floor(distance/(1000*60*60*24));
-
-const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-
-const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-
-const seconds=Math.floor((distance%(1000*60))/1000);
-
-document.getElementById("days").innerHTML=days;
-document.getElementById("hours").innerHTML=hours;
-document.getElementById("minutes").innerHTML=minutes;
-document.getElementById("seconds").innerHTML=seconds;
-
-},1000);
-
-for(let i=0;i<40;i++){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="💕";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.animationDuration=(Math.random()*8+6)+"s";
-
-heart.style.animationDelay=Math.random()*6+"s";
-
-heart.style.fontSize=(Math.random()*25+15)+"px";
-
-document.body.appendChild(heart);
-
-}
-
-</script>
-
+        document.getElementById('year').textContent = String(new Date().getFullYear());
+        updateCountdown();
+        window.setInterval(updateCountdown, 1000);
+        celebrate(12);
+    </script>
 </body>
 </html>
